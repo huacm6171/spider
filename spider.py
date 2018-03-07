@@ -27,9 +27,21 @@ import sqlite3
 import logging
 import doctest
 
+
+def argsParse(args):
+    
 def main():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="爬取指定链接信息")
     parser.add_argument('--foo', help= 'fool help')
+    parser.add_argument('--sum', dest="accumulate", action='store_const', const=sum, default=max,help='sum the integers')
+    parser.add_argument('-u')
+    parser.add_argument('-d')
+    parser.add_argument('-thread')
+    parser.add_argument('-dbfile')
+    parser.add_argument('-key')
+    parser.add_argument('-l')
+    parser.add_argument('-testself')
+
     args = parser.parse_args()
     print args
     

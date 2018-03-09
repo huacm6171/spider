@@ -16,31 +16,27 @@
 # 3、支持线程池机制，并发爬取网页
 # 4、代码需要详尽的注释，自己需要深刻理解该程序所涉及到的各类知识点
 # 5、需要自己实现线程池
-
 import argparse
 import re
 import urllib2
-import BeautifulSoup
 import threading
 import Queue
 import sqlite3
 import logging
 import doctest
 
-
-def argsParse(args):
+#def argsParse(args):
     
 def main():
     parser = argparse.ArgumentParser(description="爬取指定链接信息")
-    parser.add_argument('--foo', help= 'fool help')
-    parser.add_argument('--sum', dest="accumulate", action='store_const', const=sum, default=max,help='sum the integers')
-    parser.add_argument('-u')
-    parser.add_argument('-d')
-    parser.add_argument('-thread')
-    parser.add_argument('-dbfile')
-    parser.add_argument('-key')
-    parser.add_argument('-l')
-    parser.add_argument('-testself')
+    parser.add_argument('-u','--url', type=str, required=True,help="指定爬虫开始地址")
+    parser.add_argument('-d','--deep', type=int, default=1, help="指定爬虫深度")
+    parser.add_argument('-thread',type=int, default=10, help="give the thread num")
+    parser.add_argument('-dbfile', type=str, help="Give a dbfile name")
+    parser.add_argument('-key', type=str, help="give the keyword of content")
+    parser.add_argument('-l', type=int, default=1, choices=[1,2,3,4,5], help="the level of log")
+    parser.add_argument('-f', '--logfile',type=str, default="spider.log",help="log file name")
+    parser.add_argument('-testself', action="store_true", help="test self")
 
     args = parser.parse_args()
     print args

@@ -29,3 +29,7 @@ class WorkManager(object):
     
     def add_job(self, func, *args):
         self.work_queue.put((func, list(args)))
+
+    def wait_allcomplete(self):
+        for item in self.threads:
+            if item.isAlive(): item.join()

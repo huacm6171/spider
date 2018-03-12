@@ -52,7 +52,10 @@ def main():
     args = parser.parse_args()
     print args
     
-def CurlUrl(url, curDeep, deep):
+def curlUrl(url, curDeep, deep):
+    f = urllib2.urlopen(url)
+    content = f.read()
+    print content
     if curDeep < deep:
         #get url in cur page
         #add new task into queue
@@ -61,4 +64,5 @@ def CurlUrl(url, curDeep, deep):
 if __name__ == '__main__':
 #    main()
     args = argsParse()
+    curlUrl(args.u, 1, args.d)
     print args.u

@@ -55,3 +55,12 @@ spider.py -u url -d deep -f logfile -l loglevel(1-5)  --testself -thread number 
 版本3：Spider3.py -u url -d deep -f logfile -l loglevel(1-5)  --testself -thread number
 
 版本4：剩下所有功能
+##############question 2##################
+加入知道创宇，如果你是WEB开发极客，需要完成一个简单论坛。
+数据库使用MongoDB 、服务端应用使用Node.js 或 Python + Django 、前端使用 JQuery + Bootstrap Twitter。
+论坛功能包括：
+1. 用户自己注册、密码修改与找回
+2. 无刷新发帖、回帖
+3. 权限管理，只有自己发的贴自己才能删除
+4. 文章列表支持分页显示
+这应该不会有什么难度，如果你完成了，请尽快联系我们（yang@scanv.com）。因为你正是我们需要的人！

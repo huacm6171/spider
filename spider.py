@@ -24,6 +24,7 @@ import Queue
 import sqlite3
 import logging
 import doctest
+import BeautifulSoup
 
 def argsParse():
     parser = argparse.ArgumentParser(description="cralwer the content of given url")
@@ -36,7 +37,7 @@ def argsParse():
     parser.add_argument('-f', metavar='logfile',type=str, default="spider.log",help="log file name")
     parser.add_argument('-testself', action="store_true", help="test self")
     args = parser.parse_args()
-    print args
+    return args
 
 def main():
     parser = argparse.argumentparser(description="cralwer the content of given url")
@@ -51,7 +52,13 @@ def main():
     args = parser.parse_args()
     print args
     
-
+def CurlUrl(url, curDeep, deep):
+    if curDeep < deep:
+        #get url in cur page
+        #add new task into queue
+        
+    
 if __name__ == '__main__':
 #    main()
-    argsParse()
+    args = argsParse()
+    print args.u
